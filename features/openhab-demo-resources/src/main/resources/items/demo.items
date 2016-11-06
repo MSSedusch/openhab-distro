@@ -3,6 +3,7 @@ Group gGF           "Ground Floor"  <groundfloor>
 Group gC            "Cellar"        <cellar>
 Group Garden        "Garden"        <garden>
 Group Weather       "Weather"       <sun>
+Switch queuelength           {channel="azureiot:eventbus:test2:latest-title"}
 
 Group Status
 Group Shutters
@@ -18,8 +19,6 @@ Group FF_Child      "Child's Room"  <boy_1>      (gFF)
 Group FF_Bed        "Bedroom"       <bedroom>   (gFF)
 Group FF_Corridor   "Corridor"      <corridor>  (gFF)
 
-Item azureiot { azureiot="test" }
-
 /* active groups */
 Group:Switch:OR(ON, OFF)        Lights      "All Lights [(%d)]"
 Group:Switch:OR(ON, OFF)        Heating     "No. of Active Heatings [(%d)]"     <heating>
@@ -27,7 +26,7 @@ Group:Number:AVG                Temperature "Avg. Room Temperature [%.1f °C]"  
 Group:Contact:OR(OPEN, CLOSED)  Windows     "Open windows [(%d)]"               <contact>
 
 /* Lights */
-Dimmer Light_GF_Living_Table        "Table"         (GF_Living, Lights)
+Dimmer Light_GF_Living_Table        "Table"         (GF_Living, Lights) { azureiot=">[eventbus:test2]" }
 Switch Light_GF_Corridor_Ceiling    "Ceiling"       (GF_Corridor, Lights)
 Switch Light_GF_Kitchen_Ceiling     "Ceiling"       (GF_Kitchen, Lights)
 Switch Light_GF_Kitchen_Table       "Table"         (GF_Kitchen, Lights)

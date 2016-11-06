@@ -1,5 +1,12 @@
 var Timer timer = null
 
+rule "Send all"
+    when
+        Item Light_GF_Living_Table received command
+    then        
+        sendCommand(queuelength, ON);
+end
+
 /**
  * This is a demo rule which simulates a real dimmer by reacting to increase/decrease commands
  * and posting an updated state on the bus
