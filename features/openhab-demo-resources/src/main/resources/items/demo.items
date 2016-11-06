@@ -18,6 +18,8 @@ Group FF_Child      "Child's Room"  <boy_1>      (gFF)
 Group FF_Bed        "Bedroom"       <bedroom>   (gFF)
 Group FF_Corridor   "Corridor"      <corridor>  (gFF)
 
+Item azureiot { azureiot="test" }
+
 /* active groups */
 Group:Switch:OR(ON, OFF)        Lights      "All Lights [(%d)]"
 Group:Switch:OR(ON, OFF)        Heating     "No. of Active Heatings [(%d)]"     <heating>
